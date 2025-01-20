@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
-    <TextView android:id="@+id/txtTituloApp"
+    <TextView
+        android:id="@+id/txtTituloApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/vermelho"
@@ -19,7 +20,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
 
-    <EditText android:id="@+id/editPrimeiroNome"
+    <EditText
+        android:id="@+id/editPrimeiroNome"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
@@ -31,10 +33,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTituloApp" />
 
-    <EditText android:id="@+id/editSobreNomeAluno"
+    <EditText
+        android:id="@+id/editSobreNomeAluno"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/txt_hint_edit_sobrenome"
         android:inputType="textPersonName"
@@ -42,10 +46,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPrimeiroNome" />
 
-    <EditText android:id="@+id/editNomeCurso"
+    <EditText
+        android:id="@+id/editNomeCurso"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/txt_hint_edit_nome_do_curso"
         android:inputType="textPersonName"
@@ -53,10 +59,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editSobreNomeAluno" />
 
-    <EditText android:id="@+id/editTelefoneContato"
+    <EditText
+        android:id="@+id/editTelefoneContato"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/txt_hint_edit_telefone_contato"
         android:inputType="textPersonName"
@@ -64,7 +72,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNomeCurso" />
 
-    <Button android:id="@+id/btnLimpar"
+    <Button
+        android:id="@+id/btnLimpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
