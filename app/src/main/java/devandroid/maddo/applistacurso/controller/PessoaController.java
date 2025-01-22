@@ -36,7 +36,7 @@ public class PessoaController {
         listaVip.apply();
     }
 
-    public Pessoa buscar(Pessoa pessoa){
+    public Pessoa buscar(Pessoa pessoa) {
         pessoa.setPrimeiroNome(preferences.getString("primeiroNome", ""));
         pessoa.setSobreNome(preferences.getString("sobreNome", ""));
         pessoa.setCursoDesejado(preferences.getString("nomeCurso", ""));
@@ -45,7 +45,7 @@ public class PessoaController {
         return pessoa;
     }
 
-    public void limpar(){
+    public void limpar() {
         listaVip.clear();
         listaVip.apply();
     }
