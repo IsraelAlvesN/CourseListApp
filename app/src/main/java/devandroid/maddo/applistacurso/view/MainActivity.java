@@ -2,11 +2,12 @@ package devandroid.maddo.applistacurso.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.List;
@@ -14,7 +15,6 @@ import java.util.List;
 import devandroid.maddo.applistacurso.R;
 import devandroid.maddo.applistacurso.controller.CourseController;
 import devandroid.maddo.applistacurso.controller.PessoaController;
-import devandroid.maddo.applistacurso.model.Course;
 import devandroid.maddo.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     CourseController courseController;
 
     Pessoa pessoa;
-    List<Course> courseList;
+    List<String> courseNames;
 
     EditText editPrimeiroNome;
     EditText editSobreNomeAluno;
@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnLimpar;
     Button btnSalvar;
     Button btnFinalizar;
+
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         pessoaController.buscar(pessoa);
 
         courseController = new CourseController();
-        courseList = courseController.getListaDeCursos();
+        courseNames = courseController.dadosParaSpinner();
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobreNomeAluno = findViewById(R.id.editSobreNomeAluno);
@@ -60,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinalizar = findViewById(R.id.btnFinalizar);
+
+        spinner = findViewById(R.id.spinner);
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +100,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Adapter
+        //Layout
+        //Injetar adapter ao spinner
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,courseController.dadosParaSpinner());
+
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+
+        spinner.setAdapter(adapter);
     }
 }
