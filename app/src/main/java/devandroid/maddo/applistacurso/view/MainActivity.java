@@ -9,15 +9,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 import devandroid.maddo.applistacurso.R;
+import devandroid.maddo.applistacurso.controller.CourseController;
 import devandroid.maddo.applistacurso.controller.PessoaController;
+import devandroid.maddo.applistacurso.model.Course;
 import devandroid.maddo.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
     PessoaController pessoaController;
+    CourseController courseController;
 
     Pessoa pessoa;
+    List<Course> courseList;
 
     EditText editPrimeiroNome;
     EditText editSobreNomeAluno;
@@ -37,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
         pessoa = new Pessoa();
         pessoaController.buscar(pessoa);
+
+        courseController = new CourseController();
+        courseList = courseController.getListaDeCursos();
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobreNomeAluno = findViewById(R.id.editSobreNomeAluno);
